@@ -30,7 +30,7 @@ hello (PyObject *self)
             {...}               ...
 
     */
-    return Py_BuildValue("s", "Hello Pythonista");
+    return Py_BuildValue("s", "Ola, esta mensagem é de uma função em C.");
 }
 
 /** INTERFACES DE FUNÇÕES:
@@ -66,7 +66,7 @@ hello (PyObject *self)
       programas em C para evitar acessos indevidos a memória quando temos um
       array de structs.
 */
-static char docstring[] = "Hello world, modulo para python escrito em C";
+static char docstring[] = "Ola mundo, modulo para python 2.7 escrito em C";
 
 /** Lista de métodos de módulo
  */
@@ -115,7 +115,7 @@ static PyMethodDef module_methods[] = {
       - Fechamos aqui o código do nosso módulo simples.
 */
 PyMODINIT_FUNC
-PyInit_module(void)
+initmodule(void)
 {
-    PyModule_hello("module", module_methods);
+    Py_InitModule("module", module_methods);
 }

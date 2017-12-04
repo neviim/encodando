@@ -1,0 +1,4 @@
+Compilando a função em C para uso em python 2.7
+
+$ python setup.py install
+$ python runHello.py
