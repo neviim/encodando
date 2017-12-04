@@ -1,0 +1,14 @@
+Modulo em c para usar com python 2.7
+
+Compilando:
+
+  $ make
+  $ python testamodulo.py
+
+  Retorna:
+
+  ['__doc__', '__file__', '__name__', '__package__', 'duplicastring', 'erro', 'soma']
+
+  Valor de 1 + 3: 4
+
+  String teste duplicada: testeteste

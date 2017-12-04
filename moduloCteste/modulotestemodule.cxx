@@ -1,9 +1,9 @@
 #include <Python.h>
-
 #include <iostream>
 
 static PyObject* moduloTesteError;
 
+// Modulo teste soma:
 static PyObject* moduloteste_soma(PyObject *self, PyObject *args)
 {
 	int valorA, valorB;
@@ -14,6 +14,7 @@ static PyObject* moduloteste_soma(PyObject *self, PyObject *args)
 	return Py_BuildValue("i", valorA + valorB);
 }
 
+// Modulo duplica string:
 static PyObject* moduloteste_duplicastring(PyObject *self, PyObject *args)
 {
 	char *str;
@@ -26,16 +27,19 @@ static PyObject* moduloteste_duplicastring(PyObject *self, PyObject *args)
 	return Py_BuildValue("s", str2.c_str());
 }
 
+// Define metodo do modulo teste:
 static PyMethodDef MetodosModuloTest[] = {
 	{"soma", moduloteste_soma, METH_VARARGS, "Recebe dois inteiro e devolve a soma de ambos"},
 	{"duplicastring", moduloteste_duplicastring, METH_VARARGS, "Recebe uma string e retorna a mesma duplicada"},
 	{NULL, NULL, 0, NULL}
 };
 
+// Modulo de inicializacao de funcao:
 PyMODINIT_FUNC
 initmoduloteste(void)
 {
 	PyObject* init = Py_InitModule("moduloteste", MetodosModuloTest);
+
 	if (!init)
 		return;
 
